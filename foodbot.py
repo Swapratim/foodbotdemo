@@ -78,7 +78,7 @@ def welcome():
           "template_type": "generic",
           "elements": [
             {
-              "title": "Hi, Welcome to The South Indian!",
+              "title": "Hi" + first_name + ", Welcome to The South Indian!",
               "image_url": "http://s.dinnerbooking.eu/uploads/restaurant_pictures/530x250/1493285301_505-1348-the-south-indian-herning.jpg"
             }
           ]
