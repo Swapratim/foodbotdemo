@@ -93,7 +93,7 @@ def welcome():
       "quick_replies": [
         {
           "content_type": "text",
-          "title": "Opening Hours and Location",
+          "title": "Opening Hours",
           "payload": "openinghoursandlocation",
           "image_url": "http://s3.amazonaws.com/libapps/accounts/26094/images/open-icon.jpg"
         },
