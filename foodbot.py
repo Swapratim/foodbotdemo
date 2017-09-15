@@ -164,7 +164,7 @@ def eventlist(reqContext):
                      "template_type" : "list",
                      "elements" : [ 
                         {
-                            "title": "Århus - The Grand Opening",
+                            "title": "Aarhus - The Grand Opening",
                             "image_url": "https://media-cdn.tripadvisor.com/media/photo-o/0d/b3/3a/55/the-south-indian-xpress.jpg",
                             "default_action": {
                                "type": "web_url",
