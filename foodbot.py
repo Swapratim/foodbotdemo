@@ -35,7 +35,7 @@ def webhook():
        return welcome()
     elif reqContext.get("result").get("action") == "input.event":
        return eventlist(reqContext)
-    elif reqContext.get("result").get("action") == "Help":
+    elif reqContext.get("result").get("action") == "contact.us":
        return help(reqContext)
     else:
        print("Good Bye")
@@ -165,74 +165,74 @@ def eventlist(reqContext):
                      "elements" : [ 
                         {
                             "title": "Aarhus - The Grand Opening",
-                            "image_url": "https://media-cdn.tripadvisor.com/media/photo-o/0d/b3/3a/55/the-south-indian-xpress.jpg",
+                            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj5F6SkRuRaCN5cB3_LanKl_BtgHPtKRsGGtHWabOvDlhPtcLj",
                             "default_action": {
                                "type": "web_url",
-                               "url": "http://southindian.dk/calendar/the-south-indian-xpress-takeaway-arhus-the-grand-opening/",
+                               "url": "https://www.inc.com/jeff-haden/tyson-cole-how-to-start-successful-restaurant-6-tips.html",
                                 "webview_height_ratio": "tall",
                                 },
                             "buttons": [
                             {
                                "title": "Read More",
                                "type": "web_url",
-                               "url": "http://southindian.dk/calendar/the-south-indian-xpress-takeaway-arhus-the-grand-opening/",
+                               "url": "https://www.inc.com/jeff-haden/tyson-cole-how-to-start-successful-restaurant-6-tips.html",
                                "webview_height_ratio": "tall",
                             }
                           ]
                         },
                         {
-                            "title": "Solrød: Frokost Tilbud",
-                            "image_url": "http://southindian.dk/wp-content/uploads/2017/03/Forkost-Tilbud2.png",
-                            "subtitle": "Enjoy the Food Festival",
+                            "title": "Music & Food Festival",
+                            "image_url": "http://balithisweek.com/wp-content/uploads/2017/05/20170602-music-and-food-festival.jpg",
+                            "subtitle": "Enjoy the Food Festival with Food",
                             "default_action": 
                                 {
                                     "type": "web_url",
-                                    "url": "http://southindian.dk/calendar/solrod-frokost-tilbud/",
+                                    "url": "http://balithisweek.com/event/music-and-food-festival/",
                                     "webview_height_ratio": "tall"
                                 },
                                 "buttons": [
                                 {
                                      "title": "Read More",
                                      "type": "web_url",
-                                     "url": "http://southindian.dk/calendar/solrod-frokost-tilbud/",
+                                     "url": "http://balithisweek.com/event/music-and-food-festival/",
                                      "webview_height_ratio": "tall"
                                 }
                                ]
                         },
                         {
-                            "title": "Tamil Nytår",
-                            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBd2nw84IbiTM1L3yy7yKTv6uCf7gJfv8cuIZrXog_G1YRsNweeQ",
-                            "subtitle": "4. November 2016 12:00",
+                            "title": "Happy New Year Festival",
+                            "image_url": "http://www.call-systems.com/blog/wp-content/uploads/2013/12/new-years.jpg",
+                            "subtitle": "1st January, 2017",
                             "default_action": 
                                {
                                    "type": "web_url",
-                                   "url": "http://southindian.dk/calendar/tamil-nytar-og-ny-frokostmenu/",
+                                   "url": "http://www.call-systems.com/blog/2013/12/17/5-tips-for-a-happy-new-years-party-at-your-restaurant/",
                                    "webview_height_ratio": "tall"
                                 },
                                 "buttons": [
                                 {
                                    "title": "Read More",
                                    "type": "web_url",
-                                   "url": "http://southindian.dk/calendar/tamil-nytar-og-ny-frokostmenu/",
+                                   "url": "http://www.call-systems.com/blog/2013/12/17/5-tips-for-a-happy-new-years-party-at-your-restaurant/",
                                    "webview_height_ratio": "tall"
                                 }
                               ]
                        },
                        {
-                            "title": "Prøvespisning",
-                            "image_url": "http://southindian.dk/wp-content/uploads/2014/10/Up-close-clay-horse-of-Aiyanar-Temple-Chettinad-Tamil-Nadu-India.jpg",
-                            "subtitle": "1. November 2014 18:00, The Coco & Butter Godthåbsvej 12, 2000 Frederiksberg",
+                            "title": "Christmas Offers",
+                            "image_url": "http://l.upstc.com/events/29749/119442/original_1417080466.9791.jpg",
+                            "subtitle": "25 December, 2017, Copenhagen",
                             "default_action": 
                             {
                                 "type": "web_url",
-                                "url": "http://southindian.dk/calendar/provespisning/",
+                                "url": "http://www.upout.com/nyc/do/holiday-happy-hour-1",
                                 "webview_height_ratio": "tall"
                             },
                             "buttons": [
                             {
                                 "title": "Read More",
                                 "type": "web_url",
-                                "url": "http://southindian.dk/calendar/provespisning/",
+                                "url": "http://www.upout.com/nyc/do/holiday-happy-hour-1",
                                 "webview_height_ratio": "tall"
                             }
                            ]
@@ -242,7 +242,7 @@ def eventlist(reqContext):
                          {
                             "title": "View Site",
                             "type": "web_url",
-                            "url": newspaper_url
+                            "url": "https://marvinai.live"
                         }
                        ]  
                      } 
@@ -262,7 +262,7 @@ def eventlist(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def help(resolvedQuery):
-    speech = "I'm sorry if I make you confused. Please select Quick Reply or Menu to chat with me. \n\n 1. Click on 'News' to read latest news from 33 globally leading newspapers \n 2. Click on 'Weather' and write a city name to get weather forecast \n 3. Click on 'Wikipedia' and write a topic you want to know about. No need to ask a full question. \n 4. Click on 'YouTube' and search for your favourite videos. \n 5. You can still chat directly with Marvin without the quick replies like before for - Weather, Wikipedia & Small Talk."
+    speech = "To reserve a table or order for food delivery, please contact us at: +45-7182-5584"
     res = {
         "speech": speech,
         "displayText": speech,
