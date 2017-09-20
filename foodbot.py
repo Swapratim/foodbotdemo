@@ -37,6 +37,8 @@ def webhook():
        return eventlist(reqContext)
     elif reqContext.get("result").get("action") == "contact.us":
        return help(reqContext)
+    elif reqContext.get("result").get("action") == "howareyou":
+       return howareyou(reqContext)
     else:
        print("Good Bye")
 
@@ -248,7 +250,7 @@ def eventlist(reqContext):
                      } 
                    }
                  },
-			    {
+               {
                    "text": "Choose an item",
                    "quick_replies": [
                {
@@ -265,7 +267,59 @@ def eventlist(reqContext):
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
-
+#************************************************************************************#
+#                                                                                    #
+#   Below method is to respond "How are you?"				                         #
+#                                                                                    #
+#************************************************************************************#
+def howareyou(reqContext):
+    resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    res = {
+            "speech": "Events",
+            "displayText": "Events",
+            "data" : {
+            "facebook" : [
+	{
+      "text": "I am better than ever :) \n Hope you will enjoy close to heart delicious foods here. \n How can I help you?",
+      "quick_replies": [
+        {
+          "content_type": "text",
+          "title": "Opening Hours",
+          "payload": "openinghoursandlocation",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREBeHDCh_So0LEhyWapjjilpDFiRLXMaeuwUfc1rrxu3qShTCUqQ"
+        },
+        {
+          "content_type": "text",
+          "title": "Menu",
+          "payload": "Menu",
+          "image_url": "https://cdn1.iconfinder.com/data/icons/hotel-restaurant/512/16-512.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Take Away",
+          "payload": "Take Away",
+          "image_url": "https://d30y9cdsu7xlg0.cloudfront.net/png/66559-200.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Event",
+          "payload": "Event",
+          "image_url": "http://icons.iconarchive.com/icons/icons8/windows-8/512/Time-Today-icon.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Contact Us",
+          "payload": "contact",
+          "image_url": "http://www.logoeps.com/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+        }
+       ]
+      }]
+             } 
+           };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
 #************************************************************************************#
 #                                                                                    #
 #   Help Information Providing                                                       #
@@ -281,7 +335,7 @@ def help(resolvedQuery):
                {
                 "text": speech
                },
-			   {
+               {
                    "text": "Choose an item",
                    "quick_replies": [
                {
