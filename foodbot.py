@@ -280,6 +280,16 @@ def help(resolvedQuery):
         "facebook" : [
                {
                 "text": speech
+               },
+			   {
+                   "text": "Choose an item",
+                   "quick_replies": [
+               {
+                    "content_type": "text",
+                    "title": "Start Over",
+                    "payload": "hi"
+               }
+               ]
                }
              ]
            } 
