@@ -118,7 +118,7 @@ def welcome():
           "content_type": "text",
           "title": "Contact Us",
           "payload": "contact",
-          "image_url": "http://www.logoeps.com/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+          "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
        ]
       }
@@ -280,7 +280,7 @@ def howareyou(reqContext):
             "data" : {
             "facebook" : [
 	{
-      "text": "I am better than ever :) \n Hope you will enjoy close to heart delicious foods here. \n How can I help you?",
+      "text": "I am better than ever :) \nHope you will enjoy close to heart delicious foods here. \n How can I help you?",
       "quick_replies": [
         {
           "content_type": "text",
@@ -310,7 +310,7 @@ def howareyou(reqContext):
           "content_type": "text",
           "title": "Contact Us",
           "payload": "contact",
-          "image_url": "http://www.logoeps.com/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+          "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
        ]
       }]
@@ -326,7 +326,7 @@ def howareyou(reqContext):
 #                                                                                    #
 #************************************************************************************#
 def help(resolvedQuery):
-    speech = "To reserve a table or order for food delivery, please contact us at: +45-7182-5584"
+    speech = "To reserve a table or order for food delivery, please contact us at: +45-7182-5584. Call our Customer Care now. :)"
     res = {
         "speech": speech,
         "displayText": speech,
