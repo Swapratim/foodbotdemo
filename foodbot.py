@@ -164,6 +164,25 @@ def eventlist(reqContext):
                      "template_type" : "list",
                      "elements" : [ 
                         {
+                            "title": "Christmas Offers",
+                            "image_url": "http://l.upstc.com/events/29749/119442/original_1417080466.9791.jpg",
+                            "subtitle": "25 December, 2017, Copenhagen",
+                            "default_action": 
+                            {
+                                "type": "web_url",
+                                "url": "http://www.upout.com/nyc/do/holiday-happy-hour-1",
+                                "webview_height_ratio": "tall"
+                            },
+                            "buttons": [
+                            {
+                                "title": "Read More",
+                                "type": "web_url",
+                                "url": "http://www.upout.com/nyc/do/holiday-happy-hour-1",
+                                "webview_height_ratio": "tall"
+                            }
+                           ]
+                        },
+                        {
                             "title": "Aarhus - The Grand Opening",
                             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj5F6SkRuRaCN5cB3_LanKl_BtgHPtKRsGGtHWabOvDlhPtcLj",
                             "default_action": {
@@ -217,26 +236,7 @@ def eventlist(reqContext):
                                    "webview_height_ratio": "tall"
                                 }
                               ]
-                       },
-                       {
-                            "title": "Christmas Offers",
-                            "image_url": "http://l.upstc.com/events/29749/119442/original_1417080466.9791.jpg",
-                            "subtitle": "25 December, 2017, Copenhagen",
-                            "default_action": 
-                            {
-                                "type": "web_url",
-                                "url": "http://www.upout.com/nyc/do/holiday-happy-hour-1",
-                                "webview_height_ratio": "tall"
-                            },
-                            "buttons": [
-                            {
-                                "title": "Read More",
-                                "type": "web_url",
-                                "url": "http://www.upout.com/nyc/do/holiday-happy-hour-1",
-                                "webview_height_ratio": "tall"
-                            }
-                           ]
-                        }
+                       }
                         ],
                         "buttons": [
                          {
@@ -247,7 +247,17 @@ def eventlist(reqContext):
                        ]  
                      } 
                    }
-                 }
+                 },
+			    {
+                   "text": "Choose an item",
+                   "quick_replies": [
+               {
+                    "content_type": "text",
+                    "title": "Start Over",
+                    "payload": "hi"
+               }
+               ]
+               }
                ]
              } 
            };
