@@ -37,6 +37,8 @@ def webhook():
        return eventlist(reqContext)
     elif reqContext.get("result").get("action") == "contact.us":
        return help(reqContext)
+    elif reqContext.get("result").get("action") == "openinghoursandlocation":
+       return openinghours(reqContext)
     elif reqContext.get("result").get("action") == "menu":
        return mainMenu(reqContext)
     elif reqContext.get("result").get("action") == "menuitems":
@@ -149,7 +151,92 @@ def reply(user_id, msg):
     print (data)
     resp = requests.post("https://graph.facebook.com/v2.6/me/messages?access_token=" + ACCESS_TOKEN, json=data)
     print(resp.content)
-
+#************************************************************************************#
+#                                                                                    #
+#                       OPENING HOURS                                                #
+#                                                                                    #
+#************************************************************************************#
+def openinghours(reqContext):
+    resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    res = {
+            "speech": "Events",
+            "displayText": "Events",
+            "data" : {
+            "facebook" : [
+                {
+                    "sender_action": "typing_on"
+                },
+                {
+                 "attachment" : {
+                   "type" : "template",
+                     "payload" : {
+                      "template_type" : "generic",
+                       "elements" : [ 
+                                 {
+                                   "title" : "Coco & Butter - København",
+                                   "image_url" : "https://richardkenworthy.files.wordpress.com/2012/06/img_3877-edit.jpg",
+                                   "subtitle" : "Best Food in Town",
+                                   "buttons": [{
+                                        "type": "postback",
+                                        "title": "View Opening Hours",
+                                        "payload":"View Opening Hours"
+                                    }]
+                                 },
+                                 {
+                                   "title" : "Coco & Butter - Århus",
+                                   "image_url" : "https://previews.123rf.com/images/duha127/duha1271112/duha127111200074/11708665-Fine-restaurant-dinner-table-place-setting-Stock-Photo-dining.jpg",
+                                   "subtitle" : "Best Food in Town",
+                                   "buttons": [{
+                                        "type": "postback",
+                                        "title": "View Opening Hours",
+                                        "payload":"View Opening Hours"
+                                    }]
+                                 }
+                           ]
+                       } 
+                   }
+                },
+        {
+      "text": "Please select any of the menu from above. \nTo view other options, please click below options:",
+      "quick_replies": [
+        {
+          "content_type": "text",
+          "title": "Opening Hours",
+          "payload": "openinghoursandlocation",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREBeHDCh_So0LEhyWapjjilpDFiRLXMaeuwUfc1rrxu3qShTCUqQ"
+        },
+        {
+          "content_type": "text",
+          "title": "Menu",
+          "payload": "Menu",
+          "image_url": "https://cdn1.iconfinder.com/data/icons/hotel-restaurant/512/16-512.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Take Away",
+          "payload": "Take Away",
+          "image_url": "https://d30y9cdsu7xlg0.cloudfront.net/png/66559-200.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Event",
+          "payload": "Event",
+          "image_url": "http://icons.iconarchive.com/icons/icons8/windows-8/512/Time-Today-icon.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Contact Us",
+          "payload": "contact",
+          "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
+        }
+       ]
+     }]
+   } 
+ };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
 #************************************************************************************#
 #                                                                                    #
 #                       MAIN MENU  DISPLAY                                           #
@@ -162,6 +249,9 @@ def mainMenu(reqContext):
             "displayText": "Events",
             "data" : {
             "facebook" : [
+                {
+                    "sender_action": "typing_on"
+                },
                 {
                  "attachment" : {
                    "type" : "template",
@@ -245,6 +335,9 @@ def menuitems(reqContext):
             "displayText": "Events",
             "data" : {
             "facebook" : [
+                {
+                    "sender_action": "typing_on"
+                },
                 {
                  "attachment" : {
                    "type" : "template",
@@ -531,6 +624,9 @@ def help(resolvedQuery):
         "displayText": speech,
         "data" : {
         "facebook" : [
+               {
+                    "sender_action": "typing_on"
+               },
               {
                  "text": speech
                 },
