@@ -173,19 +173,19 @@ def mainMenu(reqContext):
                                    "image_url" : "http://mediad.publicbroadcasting.net/p/michigan/files/201703/32621859132_25f783b550_o.jpg",
                                    "subtitle" : "Best in town dishes, only for you.",
                                    "buttons": [{
-                                        "type": "web_url",
-                                        "url": " ",
-                                        "title": "Menu Items"
+                                        "type": "postback",
+                                        "title": "Menu Items",
+                                        "payload":"Menu Items"
                                     },
                                     {
-                                        "type": "web_url",
-                                        "url": " ",
-                                        "title": "Drinks"
+                                        "type": "postback",
+                                        "title": "Drinks",
+                                        "payload": "Drinks"
                                     },
                                     {
-                                        "type": "web_url",
-                                        "url": " ",
-                                        "title": "Seasonal Offers"
+                                        "type": "postback",
+                                        "title": "Seasonal Offers",
+                                        "payload": "Seasonal Offers"
                                     }]
                                  }
                            ]
