@@ -173,7 +173,7 @@ def openinghours(reqContext):
                       "template_type" : "generic",
                        "elements" : [ 
                                  {
-                                   "title" : "Coco & Butter - København",
+                                   "title" : "Coco & Butter - Copenhagen",
                                    "image_url" : "https://richardkenworthy.files.wordpress.com/2012/06/img_3877-edit.jpg",
                                    "subtitle" : "Best Food in Town",
                                    "buttons": [{
@@ -183,7 +183,7 @@ def openinghours(reqContext):
                                     }]
                                  },
                                  {
-                                   "title" : "Coco & Butter - Århus",
+                                   "title" : "Coco & Butter - Aarhus",
                                    "image_url" : "https://previews.123rf.com/images/duha127/duha1271112/duha127111200074/11708665-Fine-restaurant-dinner-table-place-setting-Stock-Photo-dining.jpg",
                                    "subtitle" : "Best Food in Town",
                                    "buttons": [{
