@@ -37,6 +37,8 @@ def webhook():
        return eventlist(reqContext)
     elif reqContext.get("result").get("action") == "contact.us":
        return help(reqContext)
+    elif reqContext.get("result").get("action") == "menu":
+       return mainMenu(reqContext)
     elif reqContext.get("result").get("action") == "menuitems":
        return menuitems(reqContext)
     elif reqContext.get("result").get("action") == "howareyou":
@@ -91,7 +93,7 @@ def welcome():
       }
     },
     {
-      "text": "This is a Demo ChatBot. You can enjoy chatting and adopt it for your own restaurant."
+      "text": "This is a Demo Restarant ChatBot. You can enjoy chatting and adopt it for your own restaurant."
     },
     {
       "text": "I'm FoodBot. How can I help you?",
@@ -150,6 +152,89 @@ def reply(user_id, msg):
 
 #************************************************************************************#
 #                                                                                    #
+#                       MAIN MENU  DISPLAY                                           #
+#                                                                                    #
+#************************************************************************************#
+def mainMenu(reqContext):
+    resolvedQuery = reqContext.get("result").get("resolvedQuery")
+    res = {
+            "speech": "Events",
+            "displayText": "Events",
+            "data" : {
+            "facebook" : [
+                {
+                 "attachment" : {
+                   "type" : "template",
+                     "payload" : {
+                      "template_type" : "generic",
+                       "elements" : [ 
+                                 {
+                                   "title" : "Coco & Butter Menu",
+                                   "image_url" : "http://mediad.publicbroadcasting.net/p/michigan/files/201703/32621859132_25f783b550_o.jpg",
+                                   "subtitle" : "Best in town dishes, only for you.",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": " ",
+                                        "title": "Menu Items"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": " ",
+                                        "title": "Drinks"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": " ",
+                                        "title": "Seasonal Offers"
+                                    }]
+                                 }
+                           ]
+                       } 
+                   }
+                },
+        {
+      "text": "Please select any of the menu from above. \nTo view other options, please click below options:",
+      "quick_replies": [
+        {
+          "content_type": "text",
+          "title": "Opening Hours",
+          "payload": "openinghoursandlocation",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREBeHDCh_So0LEhyWapjjilpDFiRLXMaeuwUfc1rrxu3qShTCUqQ"
+        },
+        {
+          "content_type": "text",
+          "title": "Menu",
+          "payload": "Menu",
+          "image_url": "https://cdn1.iconfinder.com/data/icons/hotel-restaurant/512/16-512.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Take Away",
+          "payload": "Take Away",
+          "image_url": "https://d30y9cdsu7xlg0.cloudfront.net/png/66559-200.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Event",
+          "payload": "Event",
+          "image_url": "http://icons.iconarchive.com/icons/icons8/windows-8/512/Time-Today-icon.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Contact Us",
+          "payload": "contact",
+          "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
+        }
+       ]
+     }]
+   } 
+ };
+    res = json.dumps(res, indent=4)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+#************************************************************************************#
+#                                                                                    #
 #                       MENU ITEMS DISPLAY                                           #
 #                                                                                    #
 #************************************************************************************#
@@ -169,29 +254,29 @@ def menuitems(reqContext):
                                  {
                                    "title" : "Chef's Special",
                                    "image_url" : "https://img.grouponcdn.com/deal/fqWyQpQoCk7Kzq51nszzcE/fuads_restaurant-2048x1229/v1/c700x420.jpg",
-                                   "subtitle" : " ",
+                                   "subtitle" : "60% Discount on Menu",
                                  },
                                  {
-                                   "title" : "Chicken Mama Miya",
+                                   "title" : "Chicken Mamma Miya",
                                    "image_url" : "https://www.bu.edu/today/files/2011/10/t_11-4183-INHOUSE-006.jpg",
-                                   "subtitle" : " ",
+                                   "subtitle" : "Buy One, Get one Coke Free",
                                  },
                                  {
                                    "title" : "Mexican Roll",
                                    "image_url" : "http://img.taste.com.au/_k6sa3dZ/w720-h480-cfill-q80/taste/2016/11/chicken-and-prosciutto-parmigiana-79468-1.jpeg",
-                                   "subtitle" : " ",
+                                   "subtitle" : "20% Offer on Take Away Orders",
                                  },
                                  {
-                                   "title" : "Steak Special",
+                                   "title" : "Steak Style",
                                    "image_url" : "http://www.quivertreeapartments.com/wp-content/uploads/Picture30-300x233.png",
-                                   "subtitle" : " ",
+                                   "subtitle" : "Early Bird Promo Offer",
                                  }
                            ]
                        } 
                    }
                 },
         {
-      "text": "I am better than ever :) \nHope you will enjoy close to heart delicious foods here. \n How can I help you?",
+      "text": "Taste our Chef's special excuisite dishes at reasonable price. \nTo view other options, please click below options:",
       "quick_replies": [
         {
           "content_type": "text",
