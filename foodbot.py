@@ -197,7 +197,7 @@ def openinghours(reqContext):
                    }
                 },
         {
-      #"text": "Please select any of the menu from above. \nTo view other options, please click below options:",
+      "text": "Can I help you more information:",
       "quick_replies": [
         {
           "content_type": "text",
