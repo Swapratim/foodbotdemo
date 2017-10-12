@@ -189,7 +189,7 @@ def menuitems(reqContext):
                            ]
                        } 
                    }
-                }
+                },
         {
       "text": "I am better than ever :) \nHope you will enjoy close to heart delicious foods here. \n How can I help you?",
       "quick_replies": [
@@ -224,9 +224,9 @@ def menuitems(reqContext):
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
        ]
-      }]
-             } 
-           };
+     }]
+   } 
+ };
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
