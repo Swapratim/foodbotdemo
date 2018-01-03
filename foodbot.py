@@ -618,7 +618,7 @@ def howareyou(reqContext):
 #************************************************************************************#
 def help(resolvedQuery):
     print ("Within CONTACT US method")
-    speech = "Do you like FoodBot? \nRequest for a free Demo now. \nOur company is present in Denmark & Australia. \nGrow your business with AI Chatbot. "
+    speech = "Do you like FoodBot? \nRequest for a free Demo now. \nMy agency is present in Denmark. \nGrow your business with AI Chatbot. "
     res = {
         "speech": speech,
         "displayText": speech,
@@ -650,22 +650,7 @@ def help(resolvedQuery):
                                         "url": "https://marvinai.live/about",
                                         "title": "View Website"
                                     }]
-                                 },
-                                 {
-                                   "title" : "Arnab Dasgupta",
-                                   "image_url" : "https://marvinchatbot.files.wordpress.com/2017/06/arnab-dasgupta-ceo-of-marvin-ai.jpg?w=700&h=&crop=1",
-                                   "subtitle" : "CEO of Marvin.ai \nMelbourne, Australia \nCall: +61-469-029-387",
-                                   "buttons": [{
-                                        "type": "web_url",
-                                        "url": "https://www.messenger.com/t/arnabdasgupta.uk",
-                                        "title": "Connect on Messenger"
-                                    },
-                                    {
-                                        "type": "web_url",
-                                        "url": "https://marvinai.live/about",
-                                        "title": "View Website"
-                                    }]
-                                 } 
+                                 }
                            ]
                        } 
                    }
