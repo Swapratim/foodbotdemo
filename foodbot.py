@@ -660,7 +660,7 @@ def help(resolvedQuery):
                                  {
                                    "title" : "Swapratm Roy",
                                    "image_url" : "https://marvinchatbot.files.wordpress.com/2017/06/swapratim-roy-founder-owner-of-marvin-ai.jpg?w=700&h=&crop=1",
-                                   "subtitle" : "Founder of Artificial Intelligent Chatbot Agency \nAarhus, Denmark \nCall: +45-7182-5584",
+                                   "subtitle" : "Founder of marvin.ai \nCall: +45-7182-5584",
                                    "buttons": [{
                                         "type": "web_url",
                                         "url": "https://www.messenger.com/t/swapratim.roy",
@@ -668,7 +668,7 @@ def help(resolvedQuery):
                                     },
                                     {
                                         "type": "web_url",
-                                        "url": "https://marvinai.live/about",
+                                        "url": "https://marvinai.live",
                                         "title": "View Website"
                                     }]
                                  }
