@@ -95,22 +95,31 @@ def welcome():
       }
     },
     {
-      "text": "This is a Demo Restarant ChatBot. You can enjoy chatting and adopt it for your own restaurant."
+       "sender_action": "typing_on"
     },
     {
-      "text": "I'm FoodBot. How can I help you?",
+      "text": "This is a DEMO to showcase the power of automated customer service in restaurants"
+    },
+    {
+       "sender_action": "typing_on"
+    },
+    {
+      "text": "I'm Restaurant Chatbot - the virtual assistant at your service"
+    },
+    {
+      "text": "Let me guide you to the virtual tour. Below are the most frequent topics of search",
       "quick_replies": [
-        {
-          "content_type": "text",
-          "title": "Opening Hours",
-          "payload": "openinghoursandlocation",
-          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREBeHDCh_So0LEhyWapjjilpDFiRLXMaeuwUfc1rrxu3qShTCUqQ"
-        },
         {
           "content_type": "text",
           "title": "Menu",
           "payload": "Menu",
           "image_url": "https://cdn1.iconfinder.com/data/icons/hotel-restaurant/512/16-512.png"
+        },
+        {
+          "content_type": "text",
+          "title": "Opening Hours",
+          "payload": "openinghoursandlocation",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREBeHDCh_So0LEhyWapjjilpDFiRLXMaeuwUfc1rrxu3qShTCUqQ"
         },
         {
           "content_type": "text",
@@ -126,7 +135,7 @@ def welcome():
         },
         {
           "content_type": "text",
-          "title": "Contact Me",
+          "title": "Contact",
           "payload": "contact",
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
@@ -225,7 +234,7 @@ def openinghours(reqContext):
         },
         {
           "content_type": "text",
-          "title": "Contact Me",
+          "title": "Contact",
           "payload": "contact",
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
@@ -311,7 +320,7 @@ def mainMenu(reqContext):
         },
         {
           "content_type": "text",
-          "title": "Contact Me",
+          "title": "Contact",
           "payload": "contact",
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
@@ -397,7 +406,7 @@ def menuitems(reqContext):
         },
         {
           "content_type": "text",
-          "title": "Contact Me",
+          "title": "Contact",
           "payload": "contact",
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
@@ -545,7 +554,7 @@ def eventlist(reqContext):
         },
         {
           "content_type": "text",
-          "title": "Contact Me",
+          "title": "Contact",
           "payload": "contact",
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
@@ -599,7 +608,7 @@ def howareyou(reqContext):
         },
         {
           "content_type": "text",
-          "title": "Contact Me",
+          "title": "Contact",
           "payload": "contact",
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
@@ -618,7 +627,7 @@ def howareyou(reqContext):
 #************************************************************************************#
 def help(resolvedQuery):
     print ("Within CONTACT US method")
-    speech = "Do you like FoodBot? \nRequest for a free Demo now. \nMy agency is present in Denmark. \nGrow your business with AI Chatbot. "
+    speech = "FoodBot is been created by marvin.ai. \nDo you like it?"
     res = {
         "speech": speech,
         "displayText": speech,
@@ -627,8 +636,20 @@ def help(resolvedQuery):
                {
                     "sender_action": "typing_on"
                },
-              {
+               {
                  "text": speech
+                },
+               {
+                    "sender_action": "typing_on"
+               },
+               {
+                 "text": "Did You Know: You can get 10X more Customers with Restaurant Chatbot"
+                },
+                {
+                    "sender_action": "typing_on"
+               },
+               {
+                 "text": "Request for a free Demo to see lot more exciting features of Chatbot"
                 },
                 {
                  "attachment" : {
@@ -637,9 +658,9 @@ def help(resolvedQuery):
                       "template_type" : "generic",
                        "elements" : [ 
                                  {
-                                   "title" : "Swapratim Roy",
+                                   "title" : "Swapratm Roy",
                                    "image_url" : "https://marvinchatbot.files.wordpress.com/2017/06/swapratim-roy-founder-owner-of-marvin-ai.jpg?w=700&h=&crop=1",
-                                   "subtitle" : "Founder & Owner of Marvin.ai \nAarhus, Denmark \nCall: +45-7182-5584",
+                                   "subtitle" : "Founder of Artificial Intelligent Chatbot Agency \nAarhus, Denmark \nCall: +45-7182-5584",
                                    "buttons": [{
                                         "type": "web_url",
                                         "url": "https://www.messenger.com/t/swapratim.roy",
@@ -656,7 +677,7 @@ def help(resolvedQuery):
                    }
                 },
                {
-      "text": "I'm FoodBot. How can I help you?",
+      "text": "How can I help you?",
       "quick_replies": [
         {
           "content_type": "text",
@@ -684,7 +705,7 @@ def help(resolvedQuery):
         },
         {
           "content_type": "text",
-          "title": "Contact Me",
+          "title": "Contact",
           "payload": "contact",
           "image_url": "https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/phone_marketing-128.png"
         }
