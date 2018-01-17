@@ -670,6 +670,11 @@ def help(resolvedQuery):
                                         "type": "web_url",
                                         "url": "https://marvinai.live",
                                         "title": "View Website"
+                                    },
+                                    {
+                                        "type":"phone_number",
+                                        "title":"Request For Demo",
+                                        "payload": "+4571825584"
                                     }]
                                  }
                            ]
