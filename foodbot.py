@@ -863,6 +863,24 @@ def forsale(resolvedQuery):
                                    }]
                                  },
                                  {
+                                   "title" : "Gym & Fitness Bot Template",
+                                   "image_url" : "https://images-production.global.ssl.fastly.net/uploads/posts/image/139096/chest-exercises-for-men.png?auto=compress&crop=faces,top&fit=crop&h=421&q=55&w=750",
+                                   "subtitle" : "Designed for Personal trainers and Fitness centers",
+                                   "buttons": [{
+                                        "type": "web_url",
+                                        "url": "https://marvinai.live",
+                                        "title": "Buy Template"
+                                    },
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://m.me/566837733658925",
+                                        "title": "Chat"
+                                    },
+                                    {
+                                        "type": "element_share"
+                                   }]
+                                 },
+                                 {
                                    "title" : "Coffee Shop Bot Template",
                                    "image_url" : "https://images-na.ssl-images-amazon.com/images/I/71Crz9MYPPL._SY355_.jpg",
                                    "subtitle" : "Your bot can deal with online customers, take orders and many more ",
@@ -904,6 +922,7 @@ def forsale(resolvedQuery):
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
+
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     print("Starting APPLICATION on port %d" % port)
