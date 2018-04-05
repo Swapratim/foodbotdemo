@@ -84,7 +84,7 @@ def welcome():
         'timezone': data.get('timezone'),
         'gender': data.get('gender')
     }]
-    client = MongoClient("mongodb://foodchatbot:foodchatbot1@ds235169.mlab.com:35169/heroku_jnq3vlhz")
+    client = MongoClient("mongodb://heroku_stgdzdbp:heroku_stgdzdbp@ds235169.mlab.com:35169/heroku_jnq3vlhz")
     db = client.get_default_database()
     user_table = db['foodbot_user_details']
     user_table.insert_many(USER_DATA)
