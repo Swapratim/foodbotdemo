@@ -87,6 +87,7 @@ def welcome():
     client = MongoClient("mongodb://foodchatbot:foodchatbot1@ds235169.mlab.com:35169/heroku_jnq3vlhz")
     db = client.get_default_database()
     user_table = db['foodbot_user_details']
+    user_table.insert_many(USER_DATA)
 
     # Check if already the user is present in database
     if user_table.find( { "id" : id } ):
