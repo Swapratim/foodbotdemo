@@ -75,28 +75,28 @@ def welcome():
     print (first_name)
 
     # Insert Data into MongoDB table:
-    USER_DATA = [
-    {
-        'id': data.get('id'),
-        'first_name': data.get('first_name'),
-        'last_name': data.get('last_name'),
-        'locale': data.get('locale'),
-        'timezone': data.get('timezone'),
-        'gender': data.get('gender')
-    }]
-    client = MongoClient("mongodb://heroku_stgdzdbp:heroku_stgdzdbp@ds235169.mlab.com:35169/heroku_jnq3vlhz")
-    db = client.get_default_database()
-    user_table = db['foodbot_user_details']
-    user_table.insert_many(USER_DATA)
+    # USER_DATA = [
+    # {
+        # 'id': data.get('id'),
+        # 'first_name': data.get('first_name'),
+        # 'last_name': data.get('last_name'),
+        # 'locale': data.get('locale'),
+        # 'timezone': data.get('timezone'),
+        # 'gender': data.get('gender')
+    # }]
+    # client = MongoClient("mongodb://heroku_stgdzdbp:heroku_stgdzdbp@ds235169.mlab.com:35169/heroku_jnq3vlhz")
+    # db = client.get_default_database()
+    # user_table = db['foodbot_user_details']
+    # user_table.insert_many(USER_DATA)
 
-    # Check if already the user is present in database
-    if user_table.find( { "id" : id } ):
-       print ("Data is already PRESENT in the Database")
-       #user_table.delete_many({"first_name": "Swapratim"})
-    else: 
-       print ("IT LANDED IN THE ELSE LOOP")
-       user_table.insert_many(USER_DATA)
-       print ("Data has been INSERTED")
+    # # Check if already the user is present in database
+    # if user_table.find( { "id" : id } ):
+       # print ("Data is already PRESENT in the Database")
+       # #user_table.delete_many({"first_name": "Swapratim"})
+    # else: 
+       # print ("IT LANDED IN THE ELSE LOOP")
+       # user_table.insert_many(USER_DATA)
+       # print ("Data has been INSERTED") 
 
     speech = "I'm FoodBot. How can I help you?"
     res = {
