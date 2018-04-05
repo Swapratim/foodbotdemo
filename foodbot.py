@@ -91,7 +91,6 @@ def welcome():
     # Check if already the user is present in database
     if user_table.find( { "id" : id } ):
        print ("Data is already PRESENT in the Database")
-       user_table.insert_many(USER_DATA)
        #user_table.delete_many({"first_name": "Swapratim"})
     else: 
        print ("IT LANDED IN THE ELSE LOOP")
